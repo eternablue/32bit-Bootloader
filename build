@@ -1,0 +1,11 @@
+rm *.bin
+cd asm
+
+nasm bootloader.asm -f bin -o bootloader.bin
+nasm program.asm -f bin -o program.bin
+
+cat bootloader.bin program.bin > system.bin
+mv system.bin ../
+
+rm *.bin
+cd ..
